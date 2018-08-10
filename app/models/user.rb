@@ -6,6 +6,9 @@ class User < ApplicationRecord
 
   has_many :exercises
 
+  has_many :friendships
+  has_many :friends, through: :friendships, class_name: 'User'
+
   validates :first_name, :last_name, presence: true
 
   self.per_page = 10
@@ -25,5 +28,9 @@ class User < ApplicationRecord
 
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  def follows_or_same?(new_friend)
+    friendships.map(&:friend).include? new_friend || self == new_friend
   end
 end
