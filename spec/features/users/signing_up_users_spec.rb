@@ -14,6 +14,9 @@ RSpec.feature 'Signing up users' do
     click_button 'Sign up'
 
     expect(page).to have_content 'You have signed up successfully'
+    
+    visit '/'
+    expect(page).to have_content 'John Doe'
   end
 
   scenario 'with non valid credentials' do
