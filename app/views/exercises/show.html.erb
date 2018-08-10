@@ -1,0 +1,30 @@
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-2">
+      Duration
+    </div>
+    <div class="col-md-10">
+      <%= @exercise.duration_in_min %>
+    </div>
+    <div class="col-md-2">
+      Workout
+    </div>
+    <div class="col-md-10">
+      <%= @exercise.workout %>
+    </div>
+    <div class="col-md-2">
+      Date
+    </div>
+    <div class="col-md-10">
+      <%= @exercise.workout_date %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-10 col-md-offset-2">
+      <%= link_to 'Back', user_exercises_path(current_user), class: 'btn btn-default link', id: 'new-exer-btn' %>
+    </div>
+  </div>
+</div>

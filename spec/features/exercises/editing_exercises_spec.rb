@@ -13,7 +13,7 @@ RSpec.feature 'Editin Exercise' do
     visit '/'
     click_link 'My Lounge'
 
-    path = "/users/#{owner.id}/exercises/#{@owner_exercise.id}/edit"
+    path = "/users/#{@owner.id}/exercises/#{@owner_exercise.id}/edit"
     link = "a[href=\'#{path}\']"
     find(link).click
 
