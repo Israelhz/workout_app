@@ -14,6 +14,12 @@
       <ul class="nav navbar-nav">
         <li><%= link_to 'Home', root_path %></li>
       </ul>
+      <%= form_tag(search_dashboards_path, class: 'navbar-form navbar-left', role: 'search') do %>
+        <div class="form-group">
+          <%= text_field_tag :search_name, nil, placeholder: 'Search for firneds', class: 'btn btn-default' %>
+        </div>
+        <%= submit_tag 'Search', class: 'btn btn-default' %>
+      <% end %>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <p class="navbar-text">

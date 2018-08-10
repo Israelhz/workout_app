@@ -18,7 +18,7 @@ RSpec.feature 'Searching members' do
     fill_in 'search_name', with: 'Doe'
     click_button 'Search'
 
-    expect(page).to have_content @sarah.full_name
+    expect(page).not_to have_content @sarah.full_name
     expect(page).to have_content @john.full_name
     expect(current_path).to eq "/dashboards/search"
   end
