@@ -8,10 +8,10 @@ RSpec.feature 'Listing Exercises' do
                         password: 'password')
     login_as @john
 
-    @exercise1 = @john.exercises.create(duration_in_min: 20,
+    @exercise1 = @john.exercises.create(duration_in_min: 100,
                                         workout: 'My body building activity',
                                         workout_date: Date.today)
-    @exercise2 = @john.exercises.create(duration_in_min: 35,
+    @exercise2 = @john.exercises.create(duration_in_min: 110,
                                         workout: 'Weight lifting',
                                         workout_date: 2.days.ago)
   
@@ -19,11 +19,11 @@ RSpec.feature 'Listing Exercises' do
                        last_name: 'Last',
                        email: 'fred@example.com',
                        password: 'password')
-    @exercise3 = fred.exercises.create(duration_in_min: 40,
+    @exercise3 = fred.exercises.create(duration_in_min: 120,
                                        workout: 'Push upds',
                                        workout_date: 1.day.ago)
   
-    @exercise4 = @john.exercises.create(duration_in_min: 45,
+    @exercise4 = @john.exercises.create(duration_in_min: 130,
                                        workout: 'Exercise 4 push ups',
                                        workout_date: 10.day.ago)
   end
